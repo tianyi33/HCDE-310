@@ -1,0 +1,14 @@
+import requests
+
+url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search"
+
+querystring = {"query":"beef","excludeIngredients":"coconut","intolerances":"egg, gluten","number":"10","offset":"0","type":"main course"}
+
+headers = {
+    'x-rapidapi-key': "a5130286cbmshec7ab533ae5ae67p1a53d7jsnbd7dd4050ed4",
+    'x-rapidapi-host': "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
